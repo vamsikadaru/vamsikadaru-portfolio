@@ -1,6 +1,6 @@
 import { SectionWrapper } from "@/components/section-wrapper"
 import { experience } from "@/data/portfolio"
-import { motion } from "framer-motion"
+
 
 export function Experience() {
     return (
