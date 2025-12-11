@@ -86,29 +86,38 @@ export const experience = [
 
 export const projects = [
     {
-        title: "Amazon-Clone Backend",
+        title: "In-Krypt",
+        tech: ["JavaScript", "ASP.NET", "c#", "Ethereum", "Smart Contracts", "Blockchain", "Solidity"],
+        description: "In-Krypt is a decentralized peer-to-peer (P2P) money lending platform that utilizes blockchain technology, specifically Ethereum, as collateral.",
+        links: {
+            github: "https://github.com/vamsikadaru/In-Krypt",
+            demo: "#",
+        },
+    },
+    {
+        title: "E-Commerce Backend",
         tech: ["Spring Boot", "Docker", "PostgreSQL", "CI/CD"],
         description: "Production-style Spring Boot project with Dockerized DB, feature-branched Git workflow, PRs, and CI/CD.",
         links: {
-            github: "https://github.com/vamsikadaru", // Placeholder if specific link not provided
+            github: "https://github.com/vamsikadaru/ecommerce", // Placeholder if specific link not provided
             demo: "#",
         },
     },
     {
-        title: "P2P Lending Platform",
-        tech: ["Ethereum", "Smart Contracts", "Blockchain", "Solidity"],
-        description: "Built P2P money-lending platform using Ethereum as collateral and smart contracts.",
+        title: "Farm2Home",
+        tech: ["PHP", "CSS", "Hack", "JavaScript", "CSS"],
+        description: "Farm2Home is a socially relevant project aimed at eliminating the barriers between farmers and consumers. This platform allows consumers to purchase fresh farm products directly from farmers",
         links: {
-            github: "https://github.com/vamsikadaru",
+            github: "https://github.com/vamsikadaru/Farm2Home",
             demo: "#",
         },
     },
     {
-        title: "KYC Microservice",
-        tech: ["Java", "Spring Boot", "Microservices"],
-        description: "Designed and deployed robust KYC verification workflow for verifying user identities.",
+        title: "The-IT-Portal",
+        tech: ["HTML", "CSS", "JavaScript"],
+        description: "The IT PORTAL is a web-based platform designed specifically for the IT Department of a university. I",
         links: {
-            github: "https://github.com/vamsikadaru",
+            github: "https://github.com/vamsikadaru/The-IT-Portal",
             demo: "#",
         },
     },
@@ -117,9 +126,9 @@ export const projects = [
 export const publications = [
     {
         title: "in-Krypt",
-        conference: "ICRASTEM-2K23",
-        description: "Co-authored research paper on blockchain security and encryption mechanisms.",
-        link: "#",
+        conference: "International Conference on Science, Technology, Engineering, and Management (ICRASTEM-2K23)",
+        description: "Co-authored research paper on blockchain security and encryption mechanisms. In-Krypt is a decentralized peer-to-peer (P2P) money lending platform that utilizes blockchain technology, specifically Ethereum, as collateral. This project aims to create a transparent, secure, and efficient lending environment by leveraging the immutable nature of blockchain.",
+        link: "https://www.ijiemr.org/downloads/Volume-12/Issue-4",
     },
 ]
 
