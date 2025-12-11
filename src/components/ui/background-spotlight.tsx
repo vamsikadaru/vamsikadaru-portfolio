@@ -1,0 +1,27 @@
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+export const BackgroundSpotlight = () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    useEffect(() => {
+        const updateMousePosition = (e: MouseEvent) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+
+        window.addEventListener("mousemove", updateMousePosition);
+
+        return () => {
+            window.removeEventListener("mousemove", updateMousePosition);
+        };
+    }, []);
+
+    return (
+        <motion.div
+            className="fixed inset-0 z-[0] pointer-events-none transition-opacity duration-300"
+            animate={{
+                background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, hsl(var(--primary) / var(--spotlight-opacity)), transparent 40%)`,
+            }}
+        />
+    );
+};

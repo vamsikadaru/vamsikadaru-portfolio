@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -32,11 +32,12 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 221.2 83.2% 53.3%;
 
     --radius: 0.5rem;
     --spotlight: rgba(0, 0, 0, 0.05);
     /* Shadowy spotlight for light mode */
+    --spotlight-opacity: 0.1;
   }
 
   .dark {
@@ -49,7 +50,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -66,7 +67,8 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 217.2 91.2% 59.8%;
+    --spotlight-opacity: 0.25;
   }
 }
 
@@ -77,5 +79,41 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    color: var(--foreground);
+    text-shadow: none;
+  }
+
+  25% {
+    transform: translateY(-15px) scale(1.1);
+    color: #06b6d4;
+    /* Cyan 500 */
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+  }
+
+  50% {
+    transform: translateY(-5px) scale(1.1);
+    color: #3b82f6;
+    /* Blue 500 */
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  }
+
+  75% {
+    transform: translateY(-15px) scale(1.1);
+    color: #06b6d4;
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+  }
+}
+
+@layer utilities {
+  .char-wave:hover {
+    animation: wave 1s ease-in-out infinite;
   }
 }

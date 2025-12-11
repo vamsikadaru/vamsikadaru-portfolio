@@ -10,11 +10,13 @@ import { Contact } from "@/sections/Contact"
 
 
 import { CustomCursor } from "@/components/ui/custom-cursor"
+import { BackgroundSpotlight } from "@/components/ui/background-spotlight"
 
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <CustomCursor />
+      <BackgroundSpotlight />
       <Layout>
         <Hero />
         <About />

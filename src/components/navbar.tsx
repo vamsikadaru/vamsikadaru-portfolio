@@ -4,6 +4,7 @@ import { Link as ScrollLink } from "react-scroll"
 import { motion, AnimatePresence } from "framer-motion"
 import { ModeToggle } from "@/components/mode-toggle"
 import { cn } from "@/lib/utils"
+import { personalDetails } from "@/data/portfolio"
 
 const navItems = [
     { name: "About", to: "about" },
@@ -70,10 +71,10 @@ export function Navbar() {
                     {/* Right Actions */}
                     <div className="hidden md:flex items-center space-x-4">
                         <div className="flex space-x-2">
-                            <a href="https://github.com/vamsikadaru" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2">
+                            <a href={personalDetails.socials.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2">
                                 <Github size={20} />
                             </a>
-                            <a href="https://linkedin.com/in/vamsikadaru" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2">
+                            <a href={personalDetails.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2">
                                 <Linkedin size={20} />
                             </a>
                         </div>
@@ -118,13 +119,13 @@ export function Navbar() {
                                 </ScrollLink>
                             ))}
                             <div className="flex space-x-4 px-3 py-2 mt-4 border-t border-border pt-4">
-                                <a href="https://github.com/vamsikadaru" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
+                                <a href={personalDetails.socials.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
                                     <Github size={20} />
                                 </a>
-                                <a href="https://linkedin.com/in/vamsikadaru" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
+                                <a href={personalDetails.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
                                     <Linkedin size={20} />
                                 </a>
-                                <a href="mailto:vamsikadaru@gmail.com" className="text-muted-foreground hover:text-foreground">
+                                <a href={`mailto:${personalDetails.socials.email}`} className="text-muted-foreground hover:text-foreground">
                                     <Mail size={20} />
                                 </a>
                             </div>

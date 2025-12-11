@@ -1,14 +1,15 @@
-import { Code, Database, Layers, Server, Terminal } from "lucide-react"
+import { Brain, Code, Database, Layers, Server, Terminal } from "lucide-react"
 
 export const personalDetails = {
     name: "Vamsi Kadaru",
     title: "Backend Engineer",
     tagline: "Building resilient distributed systems & scalable microservices.",
-    bio: `Associate Software Engineer with strong backend experience in Java, Spring Boot, microservices, MongoDB, PostgreSQL, AWS, and CI/CD. Top performer working on production microservices supporting thousands of requests per minute. Experienced in debugging critical production issues, optimizing APIs, automating backend flows, and building resilient distributed systems.`,
+    bio: `Hey! I’m Vamsi - a Backend Engineer who loves building real systems that make users’ lives smoother. I spend most of my time designing Spring Boot microservices, tuning databases, automating workflows, and debugging tricky production issues.
+I care about writing clean, maintainable code and building systems that scale effortlessly. Whether it’s optimizing an API, improving user experience, or digging into MongoDB to solve an edge case, I enjoy turning complex problems into elegant solutions. Always learning, always improving, always building.`,
     socials: {
         github: "https://github.com/vamsikadaru",
-        linkedin: "https://linkedin.com/in/vamsikadaru",
-        email: "vamsikadaru@gmail.com",
+        linkedin: "https://www.linkedin.com/in/vamsi-kadaru/",
+        email: "vamsikadaru7@gmail.com",
         other: [],
     },
 }
@@ -16,28 +17,33 @@ export const personalDetails = {
 export const skills = [
     {
         category: "Languages",
-        items: ["Java", "JavaScript", "SQL", "HTML/CSS"],
+        items: ["Java", "Python", "JavaScript", "C", "C++", "C#", "SQL"],
         icon: Code,
     },
     {
-        category: "Backend & Frameworks",
-        items: ["Spring Boot", "Microservices", "RESTful APIs", "Hibernate", "Node.js"],
+        category: "Frameworks & Libraries",
+        items: ["Spring Boot", "Hibernate", "JPA", "RESTful APIs", "Microservices", "Kafka", "OAuth2", "React.js", "Node.js", "HTML", "CSS", "JWT"],
         icon: Server,
     },
     {
         category: "Databases",
-        items: ["MongoDB", "PostgreSQL", "DB2", "Redis"],
+        items: ["MongoDB", "MySQL", "PostgreSQL", "Oracle", "SQL Server", "Redis"],
         icon: Database,
     },
     {
         category: "DevOps & Cloud",
-        items: ["AWS (Lambda, S3)", "Docker", "Kubernetes", "CI/CD Pipelines", "Git"],
+        items: ["AWS (EC2, S3, Lambda)", "Docker", "Kubernetes", "Jenkins", "CI/CD"],
         icon: Layers,
     },
     {
-        category: "Tools & Concepts",
-        items: ["Postman", "JIRA", "Agile", "DSA", "System Design", "Unit Testing"],
+        category: "Tools & Practices",
+        items: ["Git", "GitHub", "Jira", "Confluence", "Postman", "Swagger", "JUnit", "Mockito", "Design Patterns", "Agile/Scrum"],
         icon: Terminal,
+    },
+    {
+        category: "Core CS Foundations",
+        items: ["Data Structures & Algorithms (DSA)", "System Design"],
+        icon: Brain,
     },
 ]
 
@@ -108,11 +114,15 @@ export const education = [
     {
         degree: "MEng, Computer Science",
         school: "University of Cincinnati",
-        details: "Scholarship Recipient",
+        details: "GPA: 3.90",
+        duration: "Aug 2025 - Apr 2027",
+        location: "Cincinnati, OH, USA",
     },
     {
-        degree: "BTech IT",
-        school: "VVIT",
+        degree: "BTech, Information Technology",
+        school: "Vasireddy Venkatadri International Technological University",
         details: "GPA: 8.74",
+        duration: "Aug 2019 - Apr 2023",
+        location: "Nambur, AP, India",
     },
 ]

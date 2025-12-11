@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import { Link as ScrollLink } from "react-scroll"
 import { personalDetails } from "@/data/portfolio"
 
+import { WavyText } from "@/components/ui/wavy-text"
+
 export function Hero() {
     return (
         <section id="home" className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center py-20 overflow-hidden">
@@ -27,9 +29,9 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70"
+                        className="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl text-foreground"
                     >
-                        {personalDetails.name}
+                        <WavyText text={personalDetails.name} />
                     </motion.h1>
 
                     <motion.div
