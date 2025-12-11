@@ -49,24 +49,37 @@ export const skills = [
 
 export const experience = [
     {
-        company: "Innominds",
+        company: "Innominds Software Pvt. Ltd. (Deputed to CRED)",
         role: "Associate Software Engineer",
         duration: "Oct 2023 – Jul 2025",
+        location: "Hyderabad, India",
         description: [
-            "Built and optimized scalable backend services and microservices using Java & Spring Boot.",
-            "Supported production systems handling thousands of requests per minute.",
-            "Debugged issues by analyzing MongoDB data, fixing production bugs, improving reliability.",
-            "Automated REST API triggers and optimized workflows.",
-            "Created complex MongoDB queries to accelerate team productivity.",
-            "Delivered seamless product experiences that improved customer journey end-to-end.",
+            "Built and deployed a Spring Boot KYC microservice integrating third-party identity APIs, cutting average onboarding time from ~48 hours → <4 hours (≈90% reduction) and removing 20+ manual verification steps per user.",
+            "Refactored and indexed MongoDB & PostgreSQL queries, reducing DB latency by ~40% and increasing API throughput by ~50%.",
+            "Implemented Apache Kafka for event-driven data pipelines, enabling real-time synchronization across services handling thousands of requests per minute.",
+            "Delivered Google Pay payment integrations and automated deployments using AWS (EC2, S3, Lambda), Docker, Kubernetes, and CI/CD—cutting deployment time from hours → minutes.",
+            "Improved code reliability by raising test coverage from 55% to 85% through unit and integration testing (JUnit, Mockito), decreasing production incidents by 35% in 6 months.",
         ],
     },
     {
-        company: "CreditVidya (acquired by CRED)",
-        role: "Technical Support Engineer (Client role)",
-        duration: "Previous",
+        company: "Soul AI",
+        role: "Gen AI Model Trainer (Freelance)",
+        duration: "Apr 2025 – May 2025",
+        location: "Remote",
         description: [
-            "Handled production debugging, API-level issue analysis, and rapid bug fixes.",
+            "Enhanced model precision and reduced hallucination rates by 30% through Reinforcement Learning from Human Feedback (RLHF) and fine-tuned NLP pipelines.",
+            "Collaborated cross-functionally to monitor and fine-tune model performance, contributing to faster and more consistent production releases.",
+        ],
+    },
+    {
+        company: "Virtusa Consulting Services Pvt. Ltd.",
+        role: "Software Engineer Intern",
+        duration: "Mar 2023 – Jun 2023",
+        location: "Remote",
+        description: [
+            "Built backend modules for a Registry Admin Tool using Java & Spring Boot, reducing data processing time by 25% and improving overall backend efficiency.",
+            "Integrated REST APIs with React.js frontend, improving page responsiveness by 40% (Lighthouse metrics).",
+            "Conducted API testing using Postman, improved unit test reliability, and contributed to sprint planning and reviews under Agile methodology.",
         ],
     },
 ]
