@@ -62,9 +62,9 @@ export function Hero() {
                         </ScrollLink>
 
                         <Button size="lg" variant="outline" className="h-12 px-8 text-base rounded-full hover:bg-secondary/80 backdrop-blur-sm transition-colors" asChild>
-                            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                                 Download Resume
-                                <Download className="ml-2 h-4 w-4" />
+                                <Download className="h-4 w-4" />
                             </a>
                         </Button>
                     </motion.div>
