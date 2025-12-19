@@ -136,7 +136,7 @@ export const education = [
     {
         degree: "MEng, Computer Science",
         school: "University of Cincinnati",
-        details: "GPA: 3.90",
+        details: "GPA: 3.67",
         duration: "Aug 2025 - Apr 2027",
         location: "Cincinnati, OH, USA",
     },
