@@ -1,82 +1,80 @@
-Hi there 👋, I’m Vamsi Kadaru
+<h1 align="center">Hi 👋, I'm Vamsi Kadaru</h1>
+<h3 align="center">Backend Software Engineer | Java & Spring Boot</h3>
 
-🚀 About Me
 
-I’m a Software Engineer with strong experience in backend development and a passion for building scalable, production-ready systems. Currently, I’m pursuing an MEng in Computer Science at the University of Cincinnati while working with modern backend technologies and real-world systems.
+<p align="center">
+  <a href="https://linkedin.com"><img src="https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin"></a>
+  <a href="mailto:your.email@example.com"><img src="https://img.shields.io/badge/Email-red?style=flat&logo=gmail"></a>
+  <img src="https://komarev.com/ghpvc/?username=YOUR_GITHUB_USERNAME&label=Profile%20views&color=0e75b6&style=flat" />
+</p>
+
+
+
+⸻
+
+👨‍💻 About Me
 	•	💼 Associate Software Engineer (Backend)
 	•	🎓 MEng in Computer Science @ University of Cincinnati (Scholarship Recipient)
 	•	🎓 B.Tech in Information Technology (GPA: 8.74/10)
-	•	🧠 Strong in problem-solving, system design, and debugging production issues
+	•	🔧 Strong experience with Java, Spring Boot, REST APIs, and Databases
+	•	🧠 Passionate about clean code, debugging production issues, and scalable systems
 
 ⸻
 
 🛠️ Tech Stack
 
 Languages
-	•	Java, C, C++, JavaScript
+Java | C | C++ | JavaScript
 
-Backend & Frameworks
-	•	Spring Boot, REST APIs, Microservices
+Backend
+Spring Boot | REST APIs | Microservices
 
 Databases
-	•	MongoDB, PostgreSQL, DB2
+MongoDB | PostgreSQL | DB2
 
-Tools & Platforms
-	•	Git & GitHub, Postman, Docker, AWS (Basics), CI/CD
-
-Concepts
-	•	Data Structures & Algorithms
-	•	Object-Oriented Design
-	•	Design Patterns
-	•	API Design & Testing
+Tools
+Git | GitHub | Postman | Docker | AWS (Basics)
 
 ⸻
 
-💼 Professional Experience
+💼 Experience
 
 Associate Software Engineer – Backend
-	•	Debug and resolve critical production issues to ensure seamless user journeys.
-	•	Build optimized MongoDB queries for efficient data retrieval and analysis.
-	•	Enhance backend services using Spring Boot to improve performance and reliability.
-	•	Automate API workflows and support production deployments.
+	•	Debugged and fixed critical production issues affecting end users.
+	•	Designed efficient MongoDB queries for faster data access.
+	•	Improved backend services using Spring Boot.
+	•	Automated API workflows and supported production deployments.
 
 ⸻
 
-📌 Projects
+🚀 Projects
 
-🔹 P2P Money Lending Platform (Blockchain)
-	•	Built a peer-to-peer lending platform using Ethereum smart contracts.
-	•	Used ETH as collateral with automated contract execution.
-	•	Focused on security, transparency, and decentralization.
+P2P Money Lending Platform
+	•	Ethereum-based peer-to-peer lending platform using smart contracts.
+	•	Automated lending with ETH as collateral.
 
-🔹 Registry Admin Tool
-	•	Developed backend logic for a Gift Registry system.
+Registry Admin Tool
+	•	Backend system for managing gift registries.
 	•	Implemented DTOs, entities, and business logic.
-	•	Tested REST APIs using Postman and followed Git-based workflows.
 
 ⸻
 
-📝 Publications
-	•	in-Krypt – Co-authored research paper published at ICRASTEM-2K23.
-
-⸻
-
-🌱 Currently Learning
-	•	Advanced Spring Boot & Microservices
-	•	System Design for Scalable Applications
-	•	Cloud-native development with AWS
+📄 Publication
+	•	in-Krypt – Co-authored paper published at ICRASTEM-2K23
 
 ⸻
 
 📊 GitHub Stats
 
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact" />
+</p>
+
+
 
 ⸻
 
-🤝 Let’s Connect
-	•	💼 LinkedIn: Add your LinkedIn URL
-	•	📧 Email: Add your professional email
-
-⸻
-
-⭐ Feel free to explore my repositories and reach out if you’d like to collaborate!
+🤝 Connect With Me
+	•	LinkedIn: https://linkedin.com/in/YOUR_LINKEDIN
+	•	Email: your.email@example.com
