@@ -48,15 +48,6 @@ Backend software engineer with experience designing, building, and scaling produ
 * Integrated REST APIs with React frontend, improving page responsiveness by **40%**.
 * Performed API testing and contributed to Agile sprint cycles.
 
----
-
-### Projects
-
-**in-Krypt — Blockchain-Based P2P Lending Platform**
-
-* Developed Ethereum smart contracts for lending, borrowing, and collateral management.
-* Executed 100+ test transactions and reduced gas costs by **15%** through Solidity optimizations.
-* Built a decentralized, trustless lending system with no intermediaries.
 
 ---
 
