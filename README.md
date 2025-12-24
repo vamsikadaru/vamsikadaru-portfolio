@@ -1,50 +1,52 @@
-Hi there 👋 I’m Vamsi Kadaru
+# Hi 👋, I'm Vamsi Kadaru
 
-⸻
+Backend-focused software engineer with hands-on experience building and supporting production systems. Currently pursuing an **MEng in Computer Science at the University of Cincinnati**.
 
-👨‍💻 About Me
-	•	Backend Software Engineer working with Java & Spring Boot
-	•	Currently pursuing MEng in Computer Science at the University of Cincinnati
-	•	Experience debugging and fixing production issues in real-world systems
-	•	Interested in backend engineering, system design, and scalable APIs
+---
 
-⸻
+### About
 
-🛠 Tech Stack
-	•	Languages: Java, C, C++, JavaScript
-	•	Backend: Spring Boot, REST APIs, Microservices
-	•	Databases: MongoDB, PostgreSQL, DB2
-	•	Tools: Git, GitHub, Postman, Docker, AWS (Basics)
+* Associate Software Engineer working primarily on backend services
+* Strong experience with **Java, Spring Boot, REST APIs, and databases**
+* Regularly debug and resolve production issues in live environments
+* Interested in backend engineering, system design, and scalable applications
 
-⸻
+---
 
-💼 Experience
+### Skills
 
-Associate Software Engineer (Backend)
-	•	Fixed critical production bugs impacting end-user journeys
-	•	Wrote optimized MongoDB queries for faster data access
-	•	Improved backend services using Spring Boot
-	•	Automated API triggers and supported deployments
+* **Languages:** Java, C, C++, JavaScript
+* **Backend:** Spring Boot, REST APIs, Microservices
+* **Databases:** MongoDB, PostgreSQL, DB2
+* **Tools:** Git, GitHub, Postman, Docker, AWS (basic)
 
-⸻
+---
 
-🚀 Projects
+### Experience
 
-P2P Money Lending Platform
-	•	Ethereum-based peer-to-peer lending system using smart contracts
-	•	Automated lending with ETH as collateral
+**Associate Software Engineer (Backend)**
 
-Registry Admin Tool
-	•	Backend services for a gift registry platform
-	•	Implemented DTOs, entities, and business logic
+* Diagnosed and fixed critical production bugs affecting users
+* Wrote optimized MongoDB queries to support debugging and analysis
+* Improved backend services using Spring Boot
+* Automated API workflows and supported deployments
 
-⸻
+---
 
-📄 Publication
-	•	in-Krypt — Co-authored paper published at ICRASTEM-2K23
+### Projects
 
-⸻
+* **P2P Money Lending Platform:** Ethereum-based lending system using smart contracts and ETH collateral
+* **Registry Admin Tool:** Backend services for a gift registry platform (DTOs, entities, business logic)
 
-📫 Contact
-	•	LinkedIn: https://linkedin.com/in/YOUR_LINKEDIN
-	•	Email: your.email@example.com
+---
+
+### Publication
+
+* *in-Krypt* — Co-authored paper published at ICRASTEM-2K23
+
+---
+
+### Contact
+
+* LinkedIn: [https://linkedin.com/in/YOUR_LINKEDIN](https://linkedin.com/in/YOUR_LINKEDIN)
+* Email: [your.email@example.com](mailto:your.email@example.com)
