@@ -1,52 +1,82 @@
-# Vamsi Kadaru – Portfolio
+Hi there 👋, I’m Vamsi Kadaru
 
-This is my personal portfolio website, built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**.
+🚀 About Me
 
-It showcases my experience, projects, skills, publications, and contact information.
+I’m a Software Engineer with strong experience in backend development and a passion for building scalable, production-ready systems. Currently, I’m pursuing an MEng in Computer Science at the University of Cincinnati while working with modern backend technologies and real-world systems.
+	•	💼 Associate Software Engineer (Backend)
+	•	🎓 MEng in Computer Science @ University of Cincinnati (Scholarship Recipient)
+	•	🎓 B.Tech in Information Technology (GPA: 8.74/10)
+	•	🧠 Strong in problem-solving, system design, and debugging production issues
 
-> Note: This project was bootstrapped with the official Vite React + TypeScript template and customized for my portfolio.
+⸻
 
-## Tech Stack
+🛠️ Tech Stack
 
-- **Framework:** React (TypeScript)
-- **Bundler/Dev Server:** Vite
-- **Styling:** Tailwind CSS
-- **Animation & UI:** Framer Motion, custom components
+Languages
+	•	Java, C, C++, JavaScript
 
-## Getting Started
+Backend & Frameworks
+	•	Spring Boot, REST APIs, Microservices
 
-### Prerequisites
+Databases
+	•	MongoDB, PostgreSQL, DB2
 
-- Node.js (LTS recommended)
-- npm (comes with Node.js)
+Tools & Platforms
+	•	Git & GitHub, Postman, Docker, AWS (Basics), CI/CD
 
-### Install dependencies
+Concepts
+	•	Data Structures & Algorithms
+	•	Object-Oriented Design
+	•	Design Patterns
+	•	API Design & Testing
 
-```bash
-npm install
-```
+⸻
 
-### Run the development server
+💼 Professional Experience
 
-```bash
-npm run dev
-```
+Associate Software Engineer – Backend
+	•	Debug and resolve critical production issues to ensure seamless user journeys.
+	•	Build optimized MongoDB queries for efficient data retrieval and analysis.
+	•	Enhance backend services using Spring Boot to improve performance and reliability.
+	•	Automate API workflows and support production deployments.
 
-Then open the URL printed by Vite (for example `http://localhost:5173` or `http://localhost:5175`).
+⸻
 
-### Build for production
+📌 Projects
 
-```bash
-npm run build
-```
+🔹 P2P Money Lending Platform (Blockchain)
+	•	Built a peer-to-peer lending platform using Ethereum smart contracts.
+	•	Used ETH as collateral with automated contract execution.
+	•	Focused on security, transparency, and decentralization.
 
-### Preview the production build
+🔹 Registry Admin Tool
+	•	Developed backend logic for a Gift Registry system.
+	•	Implemented DTOs, entities, and business logic.
+	•	Tested REST APIs using Postman and followed Git-based workflows.
 
-```bash
-npm run preview
-```
+⸻
 
-## License
+📝 Publications
+	•	in-Krypt – Co-authored research paper published at ICRASTEM-2K23.
 
-Currently private for personal use.
+⸻
 
+🌱 Currently Learning
+	•	Advanced Spring Boot & Microservices
+	•	System Design for Scalable Applications
+	•	Cloud-native development with AWS
+
+⸻
+
+📊 GitHub Stats
+
+
+⸻
+
+🤝 Let’s Connect
+	•	💼 LinkedIn: Add your LinkedIn URL
+	•	📧 Email: Add your professional email
+
+⸻
+
+⭐ Feel free to explore my repositories and reach out if you’d like to collaborate!
