@@ -59,7 +59,6 @@ Master’s in Computer Science (GPA: 3.67 / 4.0)
 Coursework: Advanced Algorithms, Artificial Intelligence, Machine Learning, Software Testing & QA, Cloud Computing
 
 ---
-
 ### Contact
 
 * 📧 Email: [vamsikadaru7@gmail.com](mailto:vamsikadaru7@gmail.com)
