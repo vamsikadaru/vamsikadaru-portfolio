@@ -54,10 +54,10 @@ export const experience = [
         duration: "Oct 2023 – Jul 2025",
         location: "Hyderabad, India",
         description: [
-            "Built and deployed a Spring Boot KYC microservice integrating third-party identity APIs, cutting average onboarding time from ~48 hours → <4 hours (≈90% reduction) and removing 20+ manual verification steps per user.",
-            "Refactored and indexed MongoDB & PostgreSQL queries, reducing DB latency by ~40% and increasing API throughput by ~50%.",
-            "Implemented Apache Kafka for event-driven data pipelines, enabling real-time synchronization across services handling thousands of requests per minute.",
-            "Delivered Google Pay payment integrations and automated deployments using AWS (EC2, S3, Lambda), Docker, Kubernetes, and CI/CD—cutting deployment time from hours → minutes.",
+            "Designed and deployed a KYC microservice using Java & Spring Boot, integrating third-party identity APIs that reduced average onboarding time from 2 days to under 4 hours (≈90%), and eliminated 20+ manual verification steps per user and documented APIs with Swagger.",
+            "Refactored and indexed MongoDB and PostgreSQL queries, reducing database latency by 40% and boosting API throughput by 50%, ensuring high-performance, scalable backend services.",
+            "Implemented Apache Kafka for event-driven data pipelines, enabling real-time synchronization across services handling thousands of requests per minute, monitoring with Prometheus, Grafana for API performance.",
+            "Delivered secure, production-ready payment integrations for Google Pay, leveraging AWS (EC2, S3, Lambda), Docker, and Kubernetes with automated CI/CD pipelines that reduced deployment time from hours to minutes.",
             "Improved code reliability by raising test coverage from 55% to 85% through unit and integration testing (JUnit, Mockito), decreasing production incidents by 35% in 6 months.",
         ],
     },
@@ -77,9 +77,9 @@ export const experience = [
         duration: "Mar 2023 – Jun 2023",
         location: "Remote",
         description: [
-            "Built backend modules for a Registry Admin Tool using Java & Spring Boot, reducing data processing time by 25% and improving overall backend efficiency.",
-            "Integrated REST APIs with React.js frontend, improving page responsiveness by 40% (Lighthouse metrics).",
-            "Conducted API testing using Postman, improved unit test reliability, and contributed to sprint planning and reviews under Agile methodology.",
+            "Built file-driven ingestion services using Node.js and TypeScript to process files from SFTP, parse large payloads into individual records, and route them dynamically to backend workflows, monitored throughput and failures via Splunk and New Relic.",
+            "Designed transactional backend workflows with multiple processing steps, external API integrations, and SQL persistence & enabled traceability, automated recovery, and observed execution time (≈3s/record) and <0.1% failure rate via New Relic metrics and distributed tracing.",
+            "Implemented human-in-the-loop pause/resume via a React.js operational UI, allowing decision review and workflow resumption, reducing manual intervention by (≈70%).",
         ],
     },
 ]
