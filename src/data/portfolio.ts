@@ -4,9 +4,8 @@ export const personalDetails = {
     name: "Vamsi Kadaru",
     title: "Backend Engineer",
     titles: ["Backend Engineer", "Software Engineer", "AI Engineer"],
-    tagline: "Building resilient distributed systems & scalable microservices.",
-    bio: `Hey! I’m Vamsi - a Backend Engineer who loves building real systems that make users’ lives smoother. I spend most of my time designing Spring Boot microservices, tuning databases, automating workflows, and debugging tricky production issues.
-I care about writing clean, maintainable code and building systems that scale effortlessly. Whether it’s optimizing an API, improving user experience, or digging into MongoDB to solve an edge case, I enjoy turning complex problems into elegant solutions. Always learning, always improving, always building.`,
+    tagline: "AI-Native Engineer building resilient distributed systems, scalable microservices, and intelligent applications at scale.",
+    bio: `Hey! I’m Vamsi, an AI-Native Backend Engineer who loves building real systems that make users’ lives smoother. I spend most of my time designing Spring Boot microservices, tuning databases, automating workflows, and debugging tricky production issues. I care about writing clean, maintainable code and building systems that scale effortlessly. Alongside backend engineering, I leverage AI tools and modern machine learning techniques to accelerate development, improve decision-making, and build smarter applications. Whether it’s optimizing an API, improving user experience, integrating AI capabilities, or digging into MongoDB to solve an edge case, I enjoy turning complex problems into elegant solutions. Always learning, always improving, always building.`,
     socials: {
         github: "https://github.com/vamsikadaru",
         linkedin: "https://www.linkedin.com/in/vamsi-kadaru/",
@@ -56,11 +55,8 @@ export const experience = [
         duration: "Oct 2023 – Jul 2025",
         location: "Hyderabad, India",
         description: [
-            "Designed and deployed a KYC microservice using Java & Spring Boot, integrating third-party identity APIs that reduced average onboarding time from 2 days to under 4 hours (≈90%), and eliminated 20+ manual verification steps per user and documented APIs with Swagger.",
-            "Refactored and indexed MongoDB and PostgreSQL queries, reducing database latency by 40% and boosting API throughput by 50%, ensuring high-performance, scalable backend services.",
-            "Implemented Apache Kafka for event-driven data pipelines, enabling real-time synchronization across services handling thousands of requests per minute, monitoring with Prometheus, Grafana for API performance.",
-            "Delivered secure, production-ready payment integrations for Google Pay, leveraging AWS (EC2, S3, Lambda), Docker, and Kubernetes with automated CI/CD pipelines that reduced deployment time from hours to minutes.",
-            "Improved code reliability by raising test coverage from 55% to 85% through unit and integration testing (JUnit, Mockito), decreasing production incidents by 35% in 6 months.",
+            "Designed and deployed a KYC microservice using Java, Spring Boot, MongoDB, and PostgreSQL, integrating third-party identity verification APIs that reduced onboarding time from 2 days to under 4 hours (90%), eliminated 20+ manual verification steps per user, and improved database performance by reducing query latency by 40% and increasing API throughput by 50%.",
+            "Built and scaled event-driven backend systems using Apache Kafka, AWS (EC2, S3, Lambda), Docker, Kubernetes, and CI/CD pipelines, enabling real-time data synchronization for thousands of requests per minute, delivering secure Google Pay integrations, reducing deployment times from hours to minutes, and increasing test coverage from 55% to 85%, resulting in 35% fewer production incidents.",
         ],
         tech: ["Java", "Spring Boot", "Microservices", "MongoDB", "Apache Kafka", "AWS", "Docker", "Kubernetes", "JUnit", "Mockito"],
     },
