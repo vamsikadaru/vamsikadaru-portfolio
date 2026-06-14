@@ -3,6 +3,7 @@ import { Brain, Code, Database, Layers, Server, Terminal } from "lucide-react"
 export const personalDetails = {
     name: "Vamsi Kadaru",
     title: "Backend Engineer",
+    titles: ["Backend Engineer", "Software Engineer", "AI Engineer"],
     tagline: "Building resilient distributed systems & scalable microservices.",
     bio: `Hey! I’m Vamsi - a Backend Engineer who loves building real systems that make users’ lives smoother. I spend most of my time designing Spring Boot microservices, tuning databases, automating workflows, and debugging tricky production issues.
 I care about writing clean, maintainable code and building systems that scale effortlessly. Whether it’s optimizing an API, improving user experience, or digging into MongoDB to solve an edge case, I enjoy turning complex problems into elegant solutions. Always learning, always improving, always building.`,
@@ -51,6 +52,7 @@ export const experience = [
     {
         company: "Innominds Software Pvt. Ltd. (Deputed to CRED)",
         role: "Associate Software Engineer",
+        logo: "/cred_logo.jpg",
         duration: "Oct 2023 – Jul 2025",
         location: "Hyderabad, India",
         description: [
@@ -60,27 +62,32 @@ export const experience = [
             "Delivered secure, production-ready payment integrations for Google Pay, leveraging AWS (EC2, S3, Lambda), Docker, and Kubernetes with automated CI/CD pipelines that reduced deployment time from hours to minutes.",
             "Improved code reliability by raising test coverage from 55% to 85% through unit and integration testing (JUnit, Mockito), decreasing production incidents by 35% in 6 months.",
         ],
+        tech: ["Java", "Spring Boot", "Microservices", "MongoDB", "Apache Kafka", "AWS", "Docker", "Kubernetes", "JUnit", "Mockito"],
     },
     {
         company: "Soul AI",
         role: "Gen AI Model Trainer (Freelance)",
+        logo: "/soul_ai_logo.jpeg",
         duration: "Apr 2025 – May 2025",
         location: "Remote",
         description: [
             "Enhanced model precision and reduced hallucination rates by 30% through Reinforcement Learning from Human Feedback (RLHF) and fine-tuned NLP pipelines.",
             "Collaborated cross-functionally to monitor and fine-tune model performance, contributing to faster and more consistent production releases.",
         ],
+        tech: ["Python", "NLP", "RLHF", "LLMs"],
     },
     {
         company: "Virtusa Consulting Services Pvt. Ltd.",
         role: "Software Engineer Intern",
-        duration: "Mar 2023 – Jun 2023",
+        logo: "/virtusa_logo.png",
+        duration: "Feb 2023 – Sept 2023",
         location: "Remote",
         description: [
             "Built file-driven ingestion services using Node.js and TypeScript to process files from SFTP, parse large payloads into individual records, and route them dynamically to backend workflows, monitored throughput and failures via Splunk and New Relic.",
             "Designed transactional backend workflows with multiple processing steps, external API integrations, and SQL persistence & enabled traceability, automated recovery, and observed execution time (≈3s/record) and <0.1% failure rate via New Relic metrics and distributed tracing.",
             "Implemented human-in-the-loop pause/resume via a React.js operational UI, allowing decision review and workflow resumption, reducing manual intervention by (≈70%).",
         ],
+        tech: ["Node.js", "TypeScript", "React.js", "SQL", "Splunk", "New Relic"],
     },
 ]
 
@@ -136,6 +143,7 @@ export const education = [
     {
         degree: "MEng, Computer Science",
         school: "University of Cincinnati",
+        logo: "/cincinnati_logo.png",
         details: "GPA: 3.83",
         duration: "Aug 2025 - Apr 2027",
         location: "Cincinnati, OH, USA",
@@ -143,6 +151,7 @@ export const education = [
     {
         degree: "BTech, Information Technology",
         school: "Vasireddy Venkatadri International Technological University",
+        logo: "/vvit_logo.png",
         details: "GPA: 8.74",
         duration: "Aug 2019 - Apr 2023",
         location: "Nambur, AP, India",

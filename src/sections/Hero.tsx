@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Link as ScrollLink } from "react-scroll"
 import { personalDetails } from "@/data/portfolio"
 
-import { WavyText } from "@/components/ui/wavy-text"
+import { Typewriter } from "@/components/ui/typewriter"
 
 export function Hero() {
     return (
@@ -31,7 +31,7 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl text-foreground"
                     >
-                        <WavyText text={personalDetails.name} />
+                        {personalDetails.name}
                     </motion.h1>
 
                     <motion.div
@@ -40,8 +40,8 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="space-y-2"
                     >
-                        <h2 className="text-2xl md:text-3xl font-semibold text-primary">
-                            {personalDetails.title}
+                        <h2 className="text-2xl md:text-3xl font-semibold text-primary min-h-[40px] flex items-center justify-center">
+                            <Typewriter words={personalDetails.titles} />
                         </h2>
                         <p className="max-w-[700px] text-lg text-muted-foreground md:text-xl mx-auto leading-relaxed">
                             {personalDetails.tagline}

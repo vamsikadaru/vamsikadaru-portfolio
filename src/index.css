@@ -112,8 +112,16 @@
   }
 }
 
+@keyframes cursor-blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 @layer utilities {
   .char-wave:hover {
     animation: wave 1s ease-in-out infinite;
+  }
+  .cursor-blink {
+    animation: cursor-blink 1.2s step-end infinite;
   }
 }

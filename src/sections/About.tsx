@@ -48,23 +48,35 @@ export function About() {
                             {education.map((edu, index) => (
                                 <SpotlightCard key={index} className="bg-card/50 backdrop-blur-sm border-border/50">
                                     <CardContent className="p-6">
-                                        <div className="flex flex-col gap-2">
-                                            <div className="flex items-start justify-between w-full">
-                                                <div className="flex flex-col">
-                                                    <h3 className="font-semibold text-foreground">{edu.school}</h3>
-                                                    {/* @ts-ignore -- location added in data file */}
-                                                    <p className="text-xs text-muted-foreground">{edu.location}</p>
+                                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                                            {/* @ts-ignore -- logo property added to data schema */}
+                                            {edu.logo && (
+                                                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                                                    <img
+                                                        src={edu.logo}
+                                                        alt={`${edu.school} Logo`}
+                                                        className="object-contain w-full h-full"
+                                                    />
                                                 </div>
-                                                {/* @ts-ignore -- duration added purely in data file */}
-                                                <span className="text-sm text-muted-foreground text-right whitespace-nowrap tabular-nums">{edu.duration}</span>
-                                            </div>
-                                            <div className="flex items-center justify-between w-full">
-                                                <p className="text-sm text-muted-foreground">{edu.degree}</p>
-                                                {edu.details && (
-                                                    <span className="text-xs font-medium bg-secondary px-2 py-1 rounded text-secondary-foreground whitespace-nowrap ml-2">
-                                                        {edu.details}
-                                                    </span>
-                                                )}
+                                            )}
+                                            <div className="flex-grow flex flex-col gap-2 w-full">
+                                                <div className="flex flex-col sm:flex-row sm:items-start justify-between w-full gap-2">
+                                                    <div className="flex flex-col">
+                                                        <h3 className="font-semibold text-foreground leading-snug">{edu.school}</h3>
+                                                        {/* @ts-ignore -- location added in data file */}
+                                                        <p className="text-xs text-muted-foreground">{edu.location}</p>
+                                                    </div>
+                                                    {/* @ts-ignore -- duration added purely in data file */}
+                                                    <span className="text-sm text-muted-foreground sm:text-right whitespace-nowrap tabular-nums">{edu.duration}</span>
+                                                </div>
+                                                <div className="flex items-center justify-between w-full">
+                                                    <p className="text-sm text-muted-foreground">{edu.degree}</p>
+                                                    {edu.details && (
+                                                        <span className="text-xs font-medium bg-secondary/80 px-2 py-1 rounded text-secondary-foreground whitespace-nowrap ml-2">
+                                                            {edu.details}
+                                                        </span>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
                                     </CardContent>
