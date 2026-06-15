@@ -61,21 +61,14 @@ export function Typewriter({
     return (
         <span className={className}>
             {/* Terminal prefix with dark/medium grey */}
-            <span
-                className="font-mono font-bold"
-                style={{
-                    color: "#71717a",
-                    marginRight: "0.5rem"
-                }}
-            >
+            <span className="font-mono font-bold text-zinc-500 dark:text-zinc-400 mr-2">
                 {prefix}
             </span>
 
             {/* Smoothly typed text with slate/grey and soft shadow */}
             <span
-                className="font-mono font-bold inline-flex items-center"
+                className="font-mono font-bold inline-flex items-center text-zinc-700 dark:text-zinc-300"
                 style={{
-                    color: "#d1d5db",
                     textShadow: "0 0 8px rgba(209, 213, 219, 0.25)",
                 }}
             >
@@ -98,9 +91,8 @@ export function Typewriter({
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
-                    className="inline-block font-mono ml-1"
+                    className="inline-block font-mono ml-1 text-zinc-700 dark:text-zinc-300"
                     style={{
-                        color: "#d1d5db",
                         textShadow: "0 0 8px rgba(209, 213, 219, 0.25)",
                     }}
                 >
