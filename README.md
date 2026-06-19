@@ -63,4 +63,4 @@ Coursework: Advanced Algorithms, Artificial Intelligence, Machine Learning, Soft
 
 * 📧 Email: [vamsikadaru7@gmail.com](mailto:vamsikadaru7@gmail.com)
 * 💼 LinkedIn: [https://www.linkedin.com/in/vamsi-kadaru/](https://www.linkedin.com/in/vamsi-kadaru/)
-* 🌐 Portfolio: [https://vamsikadaru.netlify.app/](https://vamsikadaru.netlify.app/)
+* 🌐 Portfolio: [https://vamsikadaru.netlify.app/](https://vamsikadaru.vercel.app/)
