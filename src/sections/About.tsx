@@ -15,20 +15,16 @@ export function About() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="relative max-w-[260px] mx-auto md:mx-0 w-full"
+                        className="relative max-w-[260px] mx-auto md:mx-0 w-full group/profile"
                     >
-                        <div className="aspect-[3427/4570] w-full overflow-hidden rounded-xl bg-muted relative">
-                            {/* Placeholder for the user to replace. 
-                               Using a colored background or generic placeholder for now. 
-                               If the user provided an asset in previous turns I would use it, but I don't see one.
-                            */}
+                        <div className="aspect-[3427/4570] w-full overflow-hidden rounded-2xl bg-neutral-950 relative border border-white/[0.08] shadow-2xl">
                             <img
                                 src="/profile.jpg"
                                 alt="Profile"
-                                className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
+                                className="object-cover w-full h-full grayscale group-hover/profile:grayscale-0 group-hover/profile:scale-105 transition-all duration-700 ease-out"
                             />
-                            {/* Optional: Add a subtle border or effect if desired, keeping it clean for now */}
-                            <div className="absolute inset-0 ring-1 ring-inset ring-black/10 dark:ring-white/10 rounded-xl pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-80 transition-opacity duration-500" />
+                            <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none" />
                         </div>
                     </motion.div>
 

@@ -108,7 +108,7 @@ export const projects = [
     },
     {
         title: "Farm2Home",
-        tech: ["PHP", "CSS", "Hack", "JavaScript", "CSS"],
+        tech: ["PHP", "CSS", "Hack", "JavaScript"],
         description: "Farm2Home is a socially relevant project aimed at eliminating the barriers between farmers and consumers. This platform allows consumers to purchase fresh farm products directly from farmers",
         links: {
             github: "https://github.com/vamsikadaru/Farm2Home",
