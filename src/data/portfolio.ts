@@ -89,6 +89,15 @@ export const experience = [
 
 export const projects = [
     {
+        title: "ChadWallet",
+        tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Privy", "Jupiter API", "BirdEye", "Alchemy", "Supabase", "Solana"],
+        description: "A premium, non-custodial Solana trading terminal. Sign in with Google, Apple, or email, get an embedded wallet instantly, and trade trending SPL tokens with live market data.",
+        links: {
+            github: "https://github.com/vamsikadaru/ChadWallet",
+            demo: "https://my-chadwallet.vercel.app",
+        },
+    },
+    {
         title: "In-Krypt",
         tech: ["JavaScript", "ASP.NET", "c#", "Ethereum", "Smart Contracts", "Blockchain", "Solidity"],
         description: "In-Krypt is a decentralized peer-to-peer (P2P) money lending platform that utilizes blockchain technology, specifically Ethereum, as collateral.",
