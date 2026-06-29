@@ -107,15 +107,6 @@ export const projects = [
         },
     },
     {
-        title: "E-Commerce Backend",
-        tech: ["Spring Boot", "Docker", "PostgreSQL", "CI/CD"],
-        description: "Production-style Spring Boot project with Dockerized DB, feature-branched Git workflow, PRs, and CI/CD.",
-        links: {
-            github: "https://github.com/vamsikadaru/ecommerce", // Placeholder if specific link not provided
-            demo: "#",
-        },
-    },
-    {
         title: "Farm2Home",
         tech: ["PHP", "CSS", "Hack", "JavaScript"],
         description: "Farm2Home is a socially relevant project aimed at eliminating the barriers between farmers and consumers. This platform allows consumers to purchase fresh farm products directly from farmers",
