@@ -50,7 +50,7 @@ export const skills = [
 export const experience = [
     {
         company: "Innominds Software Pvt. Ltd. (Deputed to CRED)",
-        role: "Associate Software Engineer",
+        role: "Software Engineer",
         logo: "/cred_logo.jpg",
         duration: "Oct 2023 – Jul 2025",
         location: "Hyderabad, India",
@@ -76,7 +76,7 @@ export const experience = [
         company: "Virtusa Consulting Services Pvt. Ltd.",
         role: "Software Engineer Intern",
         logo: "/virtusa_logo.png",
-        duration: "Feb 2023 – Sept 2023",
+        duration: "Jul 2022 – Sept 2023",
         location: "Remote",
         description: [
             "Built file-driven ingestion services using Node.js and TypeScript to process files from SFTP, parse large payloads into individual records, and route them dynamically to backend workflows, monitored throughput and failures via Splunk and New Relic.",
