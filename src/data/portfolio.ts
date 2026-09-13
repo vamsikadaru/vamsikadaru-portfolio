@@ -74,7 +74,7 @@ export const experience = [
     },
     {
         company: "Virtusa Consulting Services Pvt. Ltd.",
-        role: "Software Engineer Intern",
+        role: "Software Engineer",
         logo: "/virtusa_logo.png",
         duration: "Jul 2022 – Sept 2023",
         location: "Remote",
