@@ -33,7 +33,7 @@ Backend software engineer with experience designing, building, and scaling produ
 * Built and scaled event-driven backend systems using Apache Kafka, AWS (EC2, S3, Lambda), Docker, Kubernetes, and CI/CD pipelines, enabling real-time data synchronization for thousands of requests per minute, delivering secure Google Pay integrations, reducing deployment times from hours to minutes, and increasing test coverage from 55% to 85%, resulting in 35% fewer production incidents.
 
 **Gen AI Model Trainer (Freelance) — Soul AI**
-*Apr 2025 – May 2025*
+*Nov 2024 – May 2025*
 
 * Enhanced model precision and reduced hallucination rates by 30% through Reinforcement Learning from Human Feedback (RLHF) and fine-tuned NLP pipelines.
 * Collaborated cross-functionally to monitor and fine-tune model performance, contributing to faster and more consistent production releases.

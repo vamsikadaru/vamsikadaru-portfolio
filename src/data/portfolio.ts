@@ -64,7 +64,7 @@ export const experience = [
         company: "Soul AI",
         role: "Gen AI Model Trainer (Freelance)",
         logo: "/soul_ai_logo.jpeg",
-        duration: "Apr 2025 – May 2025",
+        duration: "Nov 2024 – May 2025",
         location: "Remote",
         description: [
             "Enhanced model precision and reduced hallucination rates by 30% through Reinforcement Learning from Human Feedback (RLHF) and fine-tuned NLP pipelines.",
