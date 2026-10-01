@@ -1,63 +1,60 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react"
+import { motion, useMotionValue, useSpring } from "framer-motion"
 
+/**
+ * Ring cursor that trails the pointer and grows over links/buttons.
+ * Uses motion values (no React re-render per mousemove) and is skipped on touch devices.
+ */
 export const CustomCursor = () => {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [isHovering, setIsHovering] = useState(false);
+    const [enabled] = useState(() => window.matchMedia("(pointer: fine)").matches)
+    const [hovering, setHovering] = useState(false)
+    const [visible, setVisible] = useState(false)
+
+    const x = useMotionValue(-100)
+    const y = useMotionValue(-100)
+    const ringX = useSpring(x, { stiffness: 350, damping: 30, mass: 0.6 })
+    const ringY = useSpring(y, { stiffness: 350, damping: 30, mass: 0.6 })
 
     useEffect(() => {
-        const updateMousePosition = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
-        };
+        if (!enabled) return
 
-        const handleMouseOver = (e: MouseEvent) => {
-            const target = e.target as HTMLElement;
-            if (target.tagName === 'BUTTON' || target.tagName === 'A' || target.closest('button') || target.closest('a')) {
-                setIsHovering(true);
-            } else {
-                setIsHovering(false);
-            }
-        };
+        const move = (e: MouseEvent) => {
+            x.set(e.clientX)
+            y.set(e.clientY)
+            setVisible(true)
+        }
+        const over = (e: MouseEvent) => {
+            const t = e.target as HTMLElement
+            setHovering(Boolean(t.closest("a, button, input, textarea, [role=button]")))
+        }
+        const leave = () => setVisible(false)
 
-        window.addEventListener("mousemove", updateMousePosition);
-        window.addEventListener("mouseover", handleMouseOver);
-
+        window.addEventListener("mousemove", move)
+        window.addEventListener("mouseover", over)
+        document.documentElement.addEventListener("mouseleave", leave)
         return () => {
-            window.removeEventListener("mousemove", updateMousePosition);
-            window.removeEventListener("mouseover", handleMouseOver);
-        };
-    }, []);
+            window.removeEventListener("mousemove", move)
+            window.removeEventListener("mouseover", over)
+            document.documentElement.removeEventListener("mouseleave", leave)
+        }
+    }, [enabled, x, y])
+
+    if (!enabled) return null
 
     return (
         <>
             <motion.div
-                className="fixed top-0 left-0 w-4 h-4 bg-primary rounded-full pointer-events-none z-[9999] mix-blend-difference"
-                animate={{
-                    x: mousePosition.x - 8,
-                    y: mousePosition.y - 8,
-                    scale: isHovering ? 1.5 : 1,
-                }}
-                transition={{
-                    type: "spring",
-                    stiffness: 500,
-                    damping: 28,
-                    mass: 0.5,
-                }}
+                aria-hidden
+                className="pointer-events-none fixed left-0 top-0 z-[9999] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary"
+                style={{ x, y, opacity: visible ? 1 : 0 }}
             />
             <motion.div
-                className="fixed top-0 left-0 w-8 h-8 border border-primary/50 rounded-full pointer-events-none z-[9998]"
-                animate={{
-                    x: mousePosition.x - 16,
-                    y: mousePosition.y - 16,
-                    scale: isHovering ? 1.5 : 1,
-                }}
-                transition={{
-                    type: "spring",
-                    stiffness: 250,
-                    damping: 20,
-                    mass: 0.8,
-                }}
+                aria-hidden
+                className="pointer-events-none fixed left-0 top-0 z-[9998] rounded-full border border-primary"
+                style={{ x: ringX, y: ringY, translateX: "-50%", translateY: "-50%", opacity: visible ? 1 : 0 }}
+                animate={{ width: hovering ? 56 : 32, height: hovering ? 56 : 32, backgroundColor: hovering ? "hsl(var(--primary) / 0.08)" : "hsl(var(--primary) / 0)" }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
             />
         </>
-    );
-};
+    )
+}

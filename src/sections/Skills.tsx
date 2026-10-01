@@ -1,44 +1,81 @@
-import { SectionWrapper } from "@/components/section-wrapper"
+import { SectionLabel } from "@/components/ui/section-label"
+import { Reveal } from "@/components/ui/reveal"
+import { MaskLines } from "@/components/ui/mask-lines"
+import { CountUp } from "@/components/ui/count-up"
 import { skills } from "@/data/portfolio"
-import { motion } from "framer-motion"
-import { SpotlightCard } from "@/components/ui/spotlight-card"
-import { CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
+const techCount = new Set(skills.flatMap((s) => s.items)).size
+
+const stats = [
+    { value: `${techCount}+`, label: "Technologies" },
+    { value: `${skills.length}`, label: "Disciplines" },
+    { value: "3+", label: "Years shipping" },
+]
 
 export function Skills() {
     return (
-        <SectionWrapper id="skills" title="Skills" subtitle="Technologies and tools I work with.">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {skills.map((skill, index) => (
-                    <motion.div
+        <section id="skills" className="mx-auto grid max-w-[1440px] border-t border-border md:grid-cols-[34%_1fr]">
+            <div className="border-border px-6 py-24 md:border-r md:px-20 md:py-36">
+                <div className="md:sticky md:top-32">
+                    <SectionLabel index="02" label="Expertise" />
+                    <MaskLines
+                        className="display mt-10 text-5xl md:text-6xl"
+                        lines={[
+                            "I build",
+                            <span className="text-muted-foreground/40">for</span>,
+                            <span className="text-muted-foreground/40">production.</span>,
+                        ]}
+                    />
+                    <p className="mt-8 max-w-xs text-[15px] leading-relaxed text-muted-foreground">
+                        Spring Boot microservices, event-driven pipelines on Kafka and AWS, and the tests and tooling that keep them reliable in production.
+                    </p>
+
+                    <dl className="mt-12 max-w-xs">
+                        {stats.map((s) => (
+                            <div key={s.label} className="flex items-baseline gap-4 border-b border-border py-4">
+                                <dd className="display text-3xl">
+                                    <CountUp value={s.value} />
+                                </dd>
+                                <dt className="eyebrow order-last text-[9px] font-semibold">{s.label}</dt>
+                            </div>
+                        ))}
+                    </dl>
+                </div>
+            </div>
+
+            <div className="grid content-start sm:grid-cols-2">
+                {skills.map((skill, i) => (
+                    <Reveal
                         key={skill.category}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        delay={(i % 2) * 0.08}
+                        className="group relative border-b border-border px-6 py-12 transition-colors duration-500 hover:bg-card sm:odd:border-r md:px-12 md:py-16"
                     >
-                        <SpotlightCard className="h-full border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 group hover:shadow-lg hover:shadow-primary/5">
-                            <CardHeader className="flex flex-row items-center gap-3 pb-2">
-                                <div className="p-2 rounded-lg bg-secondary group-hover:bg-primary/10 transition-colors">
-                                    <skill.icon className="h-5 w-5 text-primary group-hover:scale-110 transition-transform duration-300" />
-                                </div>
-                                <CardTitle className="text-base font-semibold">{skill.category}</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <div className="flex flex-wrap gap-2">
-                                    {skill.items.map((item) => (
-                                        <span
-                                            key={item}
-                                            className="inline-flex items-center rounded-md bg-secondary/80 px-2.5 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-foreground/10"
-                                        >
-                                            {item}
-                                        </span>
-                                    ))}
-                                </div>
-                            </CardContent>
-                        </SpotlightCard>
-                    </motion.div>
+                        <span
+                            aria-hidden
+                            className="bg-brand-gradient absolute left-0 top-0 h-px w-0 transition-[width] duration-700 group-hover:w-full"
+                        />
+                        <div className="flex items-start justify-between">
+                            <span className="eyebrow text-primary">{String(i + 1).padStart(2, "0")}</span>
+                            <skill.icon
+                                className="h-6 w-6 text-muted-foreground/50 transition-colors duration-500 group-hover:text-primary"
+                                strokeWidth={1.5}
+                                aria-hidden
+                            />
+                        </div>
+                        <h3 className="display mt-10 text-2xl md:text-3xl">{skill.category}</h3>
+                        <ul className="mt-6 flex flex-wrap gap-2">
+                            {skill.items.map((item) => (
+                                <li
+                                    key={item}
+                                    className="border border-border px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground transition-colors group-hover:text-foreground"
+                                >
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </Reveal>
                 ))}
             </div>
-        </SectionWrapper>
+        </section>
     )
 }

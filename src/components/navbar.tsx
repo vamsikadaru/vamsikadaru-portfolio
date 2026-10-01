@@ -1,134 +1,157 @@
-import { useState, useEffect } from "react"
-import { Menu, X, Github, Linkedin, Mail } from "lucide-react"
-import { Link as ScrollLink } from "react-scroll"
-import { motion, AnimatePresence } from "framer-motion"
+import { useEffect, useState } from "react"
+import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion"
+import { FileText, Menu, X } from "lucide-react"
 import { ModeToggle } from "@/components/mode-toggle"
+import { useActiveSection } from "@/hooks/use-active-section"
 import { cn } from "@/lib/utils"
 import { personalDetails } from "@/data/portfolio"
 
 const navItems = [
-    { name: "About", to: "about" },
-    { name: "Skills", to: "skills" },
-    { name: "Experience", to: "experience" },
-    { name: "Projects", to: "projects" },
-    { name: "Contact", to: "contact" },
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Skills", id: "skills" },
+    { name: "Experience", id: "experience" },
+    { name: "Work", id: "projects" },
+    { name: "Contact", id: "contact" },
 ]
 
+const sectionIds = navItems.map((i) => i.id)
+
 export function Navbar() {
-    const [isOpen, setIsOpen] = useState(false)
+    const [open, setOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
+    const active = useActiveSection(sectionIds)
+    const { scrollYProgress } = useScroll()
+    const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.3 })
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50)
-        }
-
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
+        const onScroll = () => setScrolled(window.scrollY > 40)
+        onScroll()
+        window.addEventListener("scroll", onScroll, { passive: true })
+        return () => window.removeEventListener("scroll", onScroll)
     }, [])
+
+    useEffect(() => {
+        document.body.style.overflow = open ? "hidden" : ""
+    }, [open])
 
     return (
         <header
             className={cn(
-                "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent",
-                scrolled
-                    ? "bg-background/80 backdrop-blur-md border-border/50 shadow-sm"
-                    : "bg-transparent"
+                "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-500",
+                scrolled ? "border-b border-border bg-background/80 backdrop-blur-xl" : "border-b border-transparent"
             )}
         >
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                    {/* Logo */}
-                    <div className="flex-shrink-0 cursor-pointer">
-                        <ScrollLink
-                            to="home"
-                            smooth={true}
-                            duration={500}
-                            className="text-2xl font-bold font-mono tracking-tighter"
-                        >
-                            VK.
-                        </ScrollLink>
-                    </div>
+            <nav aria-label="Primary" className="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-6 md:px-20">
+                <a href="#home" className="display flex items-center gap-1 whitespace-nowrap text-xl" aria-label={`${personalDetails.name}, home`}>
+                    {personalDetails.name}
+                    <span className="mt-1 h-[3px] w-4 bg-primary" aria-hidden />
+                </a>
 
-                    {/* Desktop Nav */}
-                    <div className="hidden md:block">
-                        <div className="ml-10 flex items-baseline space-x-8">
-                            {navItems.map((item) => (
-                                <ScrollLink
-                                    key={item.name}
-                                    to={item.to}
-                                    smooth={true}
-                                    duration={500}
-                                    offset={-70}
-                                    className="cursor-pointer text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                <ul className="hidden items-center gap-10 lg:flex">
+                    {navItems.map((item) => {
+                        const isActive = active === item.id
+                        return (
+                            <li key={item.id}>
+                                <a
+                                    href={`#${item.id}`}
+                                    aria-current={isActive ? "location" : undefined}
+                                    className={cn(
+                                        "eyebrow relative py-2 transition-colors",
+                                        isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                                    )}
                                 >
                                     {item.name}
-                                </ScrollLink>
-                            ))}
-                        </div>
-                    </div>
+                                    {isActive && (
+                                        <motion.span
+                                            layoutId="nav-underline"
+                                            className="absolute -bottom-0.5 left-0 h-px w-full bg-primary"
+                                            transition={{ type: "spring", stiffness: 400, damping: 34 }}
+                                        />
+                                    )}
+                                </a>
+                            </li>
+                        )
+                    })}
+                </ul>
 
-                    {/* Right Actions */}
-                    <div className="hidden md:flex items-center space-x-4">
-                        <div className="flex space-x-2">
-                            <a href={personalDetails.socials.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2">
-                                <Github size={20} />
-                            </a>
-                            <a href={personalDetails.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2">
-                                <Linkedin size={20} />
-                            </a>
-                        </div>
-                        <ModeToggle />
-                    </div>
-
-                    {/* Mobile Menu Button */}
-                    <div className="-mr-2 flex md:hidden space-x-2 items-center">
-                        <ModeToggle />
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary focus:outline-none"
-                        >
-                            <span className="sr-only">Open main menu</span>
-                            {isOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {/* Mobile Menu */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-background border-b border-border"
+                <div className="flex items-center gap-3">
+                    <ModeToggle />
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="eyebrow hidden items-center gap-2 rounded-full border border-border px-4 py-2.5 text-foreground transition-colors hover:border-primary/60 sm:inline-flex"
                     >
-                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            {navItems.map((item) => (
-                                <ScrollLink
-                                    key={item.name}
-                                    to={item.to}
-                                    smooth={true}
-                                    duration={500}
-                                    offset={-70} // Navbar height
-                                    onClick={() => setIsOpen(false)}
-                                    className="cursor-pointer text-muted-foreground hover:text-foreground hover:bg-accent block px-3 py-2 rounded-md text-base font-medium"
+                        <FileText className="h-3.5 w-3.5" aria-hidden />
+                        Resume
+                    </a>
+                    <a
+                        href="#contact"
+                        className="eyebrow hidden rounded-full bg-foreground px-5 py-3 font-semibold text-background transition-transform hover:scale-[1.03] sm:inline-flex"
+                    >
+                        Hire me
+                    </a>
+                    <button
+                        type="button"
+                        onClick={() => setOpen((o) => !o)}
+                        aria-expanded={open}
+                        aria-controls="mobile-menu"
+                        aria-label={open ? "Close menu" : "Open menu"}
+                        className="grid h-10 w-10 place-items-center rounded-full border border-border lg:hidden"
+                    >
+                        {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+                    </button>
+                </div>
+            </nav>
+
+            <motion.div
+                aria-hidden
+                className="bg-brand-gradient absolute inset-x-0 bottom-[-1px] h-[2px] origin-left"
+                style={{ scaleX: progress }}
+            />
+
+            {/* Mobile: full-screen menu with display-size links */}
+            <AnimatePresence>
+                {open && (
+                    <motion.div
+                        id="mobile-menu"
+                        data-lenis-prevent
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="fixed inset-x-0 bottom-0 top-[76px] z-40 flex flex-col justify-between bg-background px-6 pb-10 pt-8 lg:hidden"
+                    >
+                        <ul className="space-y-2">
+                            {navItems.map((item, i) => (
+                                <motion.li
+                                    key={item.id}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.04 * i, duration: 0.4 }}
                                 >
-                                    {item.name}
-                                </ScrollLink>
+                                    <a
+                                        href={`#${item.id}`}
+                                        onClick={() => setOpen(false)}
+                                        className={cn(
+                                            "display flex items-baseline gap-4 text-5xl",
+                                            active === item.id ? "text-foreground" : "text-muted-foreground"
+                                        )}
+                                    >
+                                        <span className="eyebrow text-primary">{String(i).padStart(2, "0")}</span>
+                                        {item.name}
+                                    </a>
+                                </motion.li>
                             ))}
-                            <div className="flex space-x-4 px-3 py-2 mt-4 border-t border-border pt-4">
-                                <a href={personalDetails.socials.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-                                    <Github size={20} />
-                                </a>
-                                <a href={personalDetails.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-                                    <Linkedin size={20} />
-                                </a>
-                                <a href={`mailto:${personalDetails.socials.email}`} className="text-muted-foreground hover:text-foreground">
-                                    <Mail size={20} />
-                                </a>
-                            </div>
+                        </ul>
+                        <div className="flex gap-3">
+                            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="eyebrow flex-1 rounded-full border border-border py-4 text-center">
+                                Resume
+                            </a>
+                            <a href="#contact" onClick={() => setOpen(false)} className="eyebrow flex-1 rounded-full bg-foreground py-4 text-center font-semibold text-background">
+                                Hire me
+                            </a>
                         </div>
                     </motion.div>
                 )}

@@ -43,7 +43,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Outfit", "sans-serif"],
+        sans: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

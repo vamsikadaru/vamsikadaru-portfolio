@@ -5,6 +5,38 @@ export const personalDetails = {
     title: "Backend Engineer",
     titles: ["Backend Engineer", "Software Engineer", "AI Engineer"],
     tagline: "AI-Native Engineer building resilient distributed systems, scalable microservices, and intelligent applications at scale.",
+    headline: "I turn complex problems into elegant solutions.",
+    // Same headline, broken where the hero sets its three lines
+    headlineLines: ["I turn complex", "problems into", "elegant solutions."],
+    // Captions shown while the hero particles morph: chaos -> neural net -> </> -> HIRE ME
+    heroPhases: [
+        { tag: "01 / The problem", line: "Every system starts as chaos — tangled requirements, unknowns everywhere." },
+        { tag: "02 / The thinking", line: "I bring AI and systems thinking to find the pattern inside the noise." },
+        { tag: "03 / The craft", line: "Then I ship it — clean, scalable, production-ready backends." },
+        { tag: "04 / Your move", line: "The particles said it, not me." },
+    ],
+    location: "Cincinnati, OH",
+    facts: [
+        { label: "Role", value: "Backend Engineer · prev. CRED" },
+        { label: "Education", value: "MEng CS — University of Cincinnati" },
+        { label: "Location", value: "Cincinnati, OH, USA" },
+        { label: "Focus", value: "Java · Distributed Systems · AI" },
+    ],
+    values: ["Clean Code", "Scalable Systems", "Test Coverage", "Observability", "AI-Assisted Engineering"],
+    principles: [
+        {
+            title: "Ship fast.",
+            body: "Small, reviewable PRs that land every sprint. CI/CD does the heavy lifting so features reach production while they still matter.",
+        },
+        {
+            title: "Build right.",
+            body: "Typed contracts, clean service boundaries, tests that catch real regressions. Good backends are invisible — they just scale.",
+        },
+        {
+            title: "Think deep.",
+            body: "Designing for failure from day one: idempotency, retries, observability. Systems that survive production, not just the demo.",
+        },
+    ],
     bio: `Hey! I’m Vamsi, an AI-Native Backend Engineer who loves building real systems that make users’ lives smoother. I spend most of my time designing Spring Boot microservices, tuning databases, automating workflows, and debugging tricky production issues. I care about writing clean, maintainable code and building systems that scale effortlessly. Alongside backend engineering, I leverage AI tools and modern machine learning techniques to accelerate development, improve decision-making, and build smarter applications. Whether it’s optimizing an API, improving user experience, integrating AI capabilities, or digging into MongoDB to solve an edge case, I enjoy turning complex problems into elegant solutions. Always learning, always improving, always building.`,
     socials: {
         github: "https://github.com/vamsikadaru",
@@ -51,7 +83,8 @@ export const experience = [
     {
         company: "Innominds Software Pvt. Ltd. (Deputed to CRED)",
         role: "Software Engineer",
-        logo: "/cred_logo.jpg",
+        logo: "/logos/cred.png",
+        logoMono: true,
         duration: "Oct 2023 – Jul 2025",
         location: "Hyderabad, India",
         description: [
@@ -63,7 +96,8 @@ export const experience = [
     {
         company: "Soul AI",
         role: "Gen AI Model Trainer (Freelance)",
-        logo: "/soul_ai_logo.jpeg",
+        logo: "/logos/soul-ai.png",
+        logoMono: true,
         duration: "Nov 2024 – May 2025",
         location: "Remote",
         description: [
@@ -75,7 +109,7 @@ export const experience = [
     {
         company: "Virtusa Consulting Services Pvt. Ltd.",
         role: "Software Engineer",
-        logo: "/virtusa_logo.png",
+        logo: "/logos/virtusa.png",
         duration: "Jul 2022 – Sept 2023",
         location: "Remote",
         description: [
@@ -90,6 +124,8 @@ export const experience = [
 export const projects = [
     {
         title: "ChadWallet",
+        category: "Web3 · Trading",
+        image: "/chadwallet.jpg",
         tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Privy", "Jupiter API", "BirdEye", "Alchemy", "Supabase", "Solana"],
         description: "A premium, non-custodial Solana trading terminal. Sign in with Google, Apple, or email, get an embedded wallet instantly, and trade trending SPL tokens with live market data.",
         links: {
@@ -99,6 +135,7 @@ export const projects = [
     },
     {
         title: "In-Krypt",
+        category: "Blockchain · FinTech",
         tech: ["JavaScript", "ASP.NET", "c#", "Ethereum", "Smart Contracts", "Blockchain", "Solidity"],
         description: "In-Krypt is a decentralized peer-to-peer (P2P) money lending platform that utilizes blockchain technology, specifically Ethereum, as collateral.",
         links: {
@@ -108,8 +145,9 @@ export const projects = [
     },
     {
         title: "Farm2Home",
+        category: "Marketplace",
         tech: ["PHP", "CSS", "Hack", "JavaScript"],
-        description: "Farm2Home is a socially relevant project aimed at eliminating the barriers between farmers and consumers. This platform allows consumers to purchase fresh farm products directly from farmers",
+        description: "Farm2Home is a socially relevant project aimed at eliminating the barriers between farmers and consumers. This platform allows consumers to purchase fresh farm products directly from farmers.",
         links: {
             github: "https://github.com/vamsikadaru/Farm2Home",
             demo: "#",
@@ -117,8 +155,9 @@ export const projects = [
     },
     {
         title: "The-IT-Portal",
+        category: "Web Platform",
         tech: ["HTML", "CSS", "JavaScript"],
-        description: "The IT PORTAL is a web-based platform designed specifically for the IT Department of a university. I",
+        description: "The IT PORTAL is a web-based platform designed specifically for the IT Department of a university.",
         links: {
             github: "https://github.com/vamsikadaru/The-IT-Portal",
             demo: "#",
@@ -129,6 +168,7 @@ export const projects = [
 export const publications = [
     {
         title: "in-Krypt",
+        year: "2023",
         conference: "International Conference on Science, Technology, Engineering, and Management (ICRASTEM-2K23)",
         description: "Co-authored research paper on blockchain security and encryption mechanisms. In-Krypt is a decentralized peer-to-peer (P2P) money lending platform that utilizes blockchain technology, specifically Ethereum, as collateral. This project aims to create a transparent, secure, and efficient lending environment by leveraging the immutable nature of blockchain.",
         link: "https://www.ijiemr.org/downloads/Volume-12/Issue-4",
@@ -139,7 +179,7 @@ export const education = [
     {
         degree: "MEng, Computer Science",
         school: "University of Cincinnati",
-        logo: "/cincinnati_logo.png",
+        logo: "/logos/cincinnati.png",
         details: "GPA: 3.83",
         duration: "Aug 2025 - Apr 2027",
         location: "Cincinnati, OH, USA",
@@ -147,7 +187,7 @@ export const education = [
     {
         degree: "BTech, Information Technology",
         school: "Vasireddy Venkatadri International Technological University",
-        logo: "/vvit_logo.png",
+        logo: "/logos/vvit.png",
         details: "GPA: 8.74",
         duration: "Aug 2019 - Apr 2023",
         location: "Nambur, AP, India",

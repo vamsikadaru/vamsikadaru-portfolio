@@ -1,87 +1,93 @@
-import { SectionWrapper } from "@/components/section-wrapper"
-import { personalDetails, education } from "@/data/portfolio"
-import { motion } from "framer-motion"
-import { SpotlightCard } from "@/components/ui/spotlight-card"
-import { CardContent } from "@/components/ui/card"
+import { SectionLabel } from "@/components/ui/section-label"
+import { Reveal } from "@/components/ui/reveal"
+import { MaskLines } from "@/components/ui/mask-lines"
+import { education, personalDetails } from "@/data/portfolio"
+import { LogoMark } from "@/components/ui/logo-mark"
+
+// Lead with the first two sentences of the bio, set the rest smaller
+const sentences = personalDetails.bio.match(/[^.!?]+[.!?]+/g) ?? [personalDetails.bio]
+const lead = sentences.slice(0, 2).join("").trim()
+const rest = sentences.slice(2).join("").trim()
 
 export function About() {
     return (
-        <SectionWrapper id="about" title="About Me">
-            <div className="mx-auto max-w-6xl">
-                <div className="grid gap-12 md:grid-cols-[2fr_3fr] items-start">
-                    {/* Image Column */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="relative max-w-[260px] mx-auto md:mx-0 w-full group/profile"
-                    >
-                        <div className="aspect-[3427/4570] w-full overflow-hidden rounded-2xl bg-neutral-950 relative border border-white/[0.08] shadow-2xl">
-                            <img
-                                src="/profile.jpg"
-                                alt="Profile"
-                                className="object-cover w-full h-full grayscale group-hover/profile:grayscale-0 group-hover/profile:scale-105 transition-all duration-700 ease-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-80 transition-opacity duration-500" />
-                            <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none" />
-                        </div>
-                    </motion.div>
+        <section id="about" className="mx-auto grid max-w-[1440px] md:grid-cols-[34%_1fr]">
+            {/* Left rail */}
+            <div className="border-border px-6 py-24 md:border-r md:px-20 md:py-36">
+                <div className="md:sticky md:top-32">
+                    <SectionLabel index="01" label="About" />
+                    <MaskLines
+                        className="display mt-10 pb-2 text-7xl md:text-8xl"
+                        lines={[<span className="text-gradient">About</span>]}
+                    />
 
-                    {/* Content Column */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        className="prose prose-neutral dark:prose-invert text-lg text-foreground/90"
-                    >
-                        <p className="leading-relaxed mb-8">
-                            {personalDetails.bio}
-                        </p>
-
-                        <div className="grid gap-4 mt-8 not-prose">
-                            {education.map((edu, index) => (
-                                <SpotlightCard key={index} className="bg-card/50 backdrop-blur-sm border-border/50">
-                                    <CardContent className="p-6">
-                                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                                            {/* @ts-ignore -- logo property added to data schema */}
-                                            {edu.logo && (
-                                                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                                                    <img
-                                                        src={edu.logo}
-                                                        alt={`${edu.school} Logo`}
-                                                        className="object-contain w-full h-full"
-                                                    />
-                                                </div>
-                                            )}
-                                            <div className="flex-grow flex flex-col gap-2 w-full">
-                                                <div className="flex flex-col sm:flex-row sm:items-start justify-between w-full gap-2">
-                                                    <div className="flex flex-col">
-                                                        <h3 className="font-semibold text-foreground leading-snug">{edu.school}</h3>
-                                                        {/* @ts-ignore -- location added in data file */}
-                                                        <p className="text-xs text-muted-foreground">{edu.location}</p>
-                                                    </div>
-                                                    {/* @ts-ignore -- duration added purely in data file */}
-                                                    <span className="text-sm text-muted-foreground sm:text-right whitespace-nowrap tabular-nums">{edu.duration}</span>
-                                                </div>
-                                                <div className="flex items-center justify-between w-full">
-                                                    <p className="text-sm text-muted-foreground">{edu.degree}</p>
-                                                    {edu.details && (
-                                                        <span className="text-xs font-medium bg-secondary/80 px-2 py-1 rounded text-secondary-foreground whitespace-nowrap ml-2">
-                                                            {edu.details}
-                                                        </span>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </CardContent>
-                                </SpotlightCard>
-                            ))}
-                        </div>
-                    </motion.div>
+                    <dl className="mt-14">
+                        {personalDetails.facts.map((f) => (
+                            <div key={f.label} className="border-b border-border py-4">
+                                <dt className="eyebrow text-[9px] text-primary">{f.label}</dt>
+                                <dd className="mt-1.5 text-[15px] font-medium">{f.value}</dd>
+                            </div>
+                        ))}
+                    </dl>
                 </div>
             </div>
-        </SectionWrapper>
+
+            {/* Right content */}
+            <div className="px-6 pb-24 md:px-20 md:py-36 md:pt-[11.5rem]">
+                <MaskLines
+                    as="h3"
+                    className="display max-w-[16ch] text-4xl md:text-6xl"
+                    lines={[
+                        "Building at the",
+                        "intersection of",
+                        <>
+                            backend <span className="text-muted-foreground/60">and AI.</span>
+                        </>,
+                    ]}
+                />
+
+                <Reveal delay={0.1} className="mt-10 max-w-2xl space-y-6">
+                    <p className="text-lg font-medium leading-[1.8]">{lead}</p>
+                    <p className="text-[15px] leading-[1.9] text-muted-foreground">{rest}</p>
+                </Reveal>
+
+                <Reveal delay={0.15} className="mt-14">
+                    <p className="eyebrow text-[9px] text-muted-foreground/70">Engineering values</p>
+                    <ul className="mt-5 flex flex-wrap gap-3">
+                        {personalDetails.values.map((v) => (
+                            <li
+                                key={v}
+                                className="rounded-full border border-border px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
+                            >
+                                {v}
+                            </li>
+                        ))}
+                    </ul>
+                </Reveal>
+
+                <Reveal delay={0.2} className="mt-16">
+                    <p className="eyebrow text-[9px] text-muted-foreground/70">Education</p>
+                    <ol className="mt-6 border-l border-border">
+                        {education.map((edu) => (
+                            <li key={edu.school} className="relative pb-10 pl-8 last:pb-0">
+                                <span aria-hidden className="absolute -left-[5px] top-1.5 h-[9px] w-[9px] rounded-full border border-primary bg-background" />
+                                <p className="eyebrow text-[9px] text-primary">{edu.duration}</p>
+                                <div className="mt-3 flex items-center gap-4">
+                                    <div className="grid h-12 w-12 shrink-0 place-items-center">
+                                        <LogoMark src={edu.logo} mono={"logoMono" in edu} />
+                                    </div>
+                                    <div>
+                                        <p className="text-lg font-semibold leading-snug">{edu.school}</p>
+                                        <p className="text-sm text-muted-foreground">
+                                            {edu.degree} · {edu.details} · {edu.location}
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        ))}
+                    </ol>
+                </Reveal>
+            </div>
+        </section>
     )
 }
